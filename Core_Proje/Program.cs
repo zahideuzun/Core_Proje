@@ -21,6 +21,10 @@ builder.Services.AddDbContext<CoreContext>(options => options.UseSqlServer(conne
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IFeatureDal, EFFeatureDal>();
 builder.Services.AddScoped<IFeatureService, FeatureManager>();
+
+builder.Services.AddScoped<IAboutDal, EFAboutDal>();
+builder.Services.AddScoped<IAboutService, AboutManager>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

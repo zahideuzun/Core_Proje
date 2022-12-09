@@ -8,7 +8,7 @@ using Entities.Concrete;
 
 namespace Business.Abstract
 {
-    internal interface IAboutService : IGenericService<About>
+	public interface IAboutService : IGenericService<About>
 	{
 
 	}

@@ -19,6 +19,11 @@ namespace DataAccess.Repository.Bases
             _coreContext = coreContext;
         }
 
+        //protected GenericRepo()
+        //{
+
+        //}
+
         public void Delete(T t)
         {
 

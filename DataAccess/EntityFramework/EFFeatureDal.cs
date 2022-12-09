@@ -13,10 +13,6 @@ namespace DataAccess.EntityFramework
 {
 	public class EFFeatureDal : GenericRepo<Feature> , IFeatureDal
 	{
-        //public EFFeatureDal()
-        //{
-
-        //}
         public EFFeatureDal(CoreContext dbContext) : base(dbContext)
         {
 

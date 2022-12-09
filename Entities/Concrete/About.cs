@@ -19,7 +19,5 @@ namespace Entities.Concrete
 		public string Address { get; set; }
 		public string ImageUrl { get; set; }
 
-
-
 	}
 }

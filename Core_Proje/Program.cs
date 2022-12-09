@@ -19,11 +19,11 @@ builder.Services.AddDbContext<CoreContext>(options => options.UseSqlServer(conne
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IFeatureDal, EFFeatureDal>();
-builder.Services.AddScoped<IFeatureService, FeatureManager>();
 
-builder.Services.AddScoped<IAboutDal, EFAboutDal>();
-builder.Services.AddScoped<IAboutService, AboutManager>();
+builder.Services.AddTransient<IFeatureDal, EFFeatureDal>();
+builder.Services.AddTransient<IAboutDal, EFAboutDal>();
+builder.Services.AddTransient<IFeatureService, FeatureManager>();
+builder.Services.AddTransient<IAboutService, AboutManager>();
 
 var app = builder.Build();
 

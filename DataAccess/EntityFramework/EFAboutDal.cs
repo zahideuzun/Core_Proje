@@ -12,7 +12,7 @@ namespace DataAccess.EntityFramework
 {
 	public class EFAboutDal : GenericRepo<About>, IAboutDal
 	{
-        protected EFAboutDal(CoreContext dbContext) : base(dbContext)
+        public EFAboutDal(CoreContext dbContext) : base(dbContext)
         {
         }
 

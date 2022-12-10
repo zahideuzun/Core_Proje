@@ -10,12 +10,9 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFContactDal : GenericRepo<Contact> , IContactDal
+	public class EFContactDal : GenericRepo<Contact,CoreContext> , IContactDal
 	{
-        protected EFContactDal(CoreContext dbContext) : base(dbContext)
-        {
-
-        }
+        
 
     }
 }

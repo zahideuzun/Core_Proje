@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entities.Concrete;
+﻿using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAccess.Concrete
 {
 	public class CoreContext : DbContext
-	{
-        public CoreContext(DbContextOptions<CoreContext> options) : base(options)
+    {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
+		
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .Build();
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("CoreDB"));
         }
         public DbSet<About> Abouts { get; set; }
 		public DbSet<Contact> Contacts { get; set; }	

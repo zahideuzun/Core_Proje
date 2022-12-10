@@ -11,11 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFFeatureDal : GenericRepo<Feature> , IFeatureDal
+	public class EFFeatureDal : GenericRepo<Feature,CoreContext> , IFeatureDal
 	{
-        public EFFeatureDal(CoreContext dbContext) : base(dbContext)
-        {
-
-        }
+      
     }
 }

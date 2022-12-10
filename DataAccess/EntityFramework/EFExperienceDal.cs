@@ -10,11 +10,8 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFExperienceDal : GenericRepo<Experience> , IExperienceDal
+	public class EFExperienceDal : GenericRepo<Experience,CoreContext> , IExperienceDal
 	{
-        protected EFExperienceDal(CoreContext dbContext) : base(dbContext)
-        {
-
-        }
+      
     }
 }

@@ -10,11 +10,7 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFServiceDal : GenericRepo<Service> , IServiceDal
+	public class EFServiceDal : GenericRepo<Service, CoreContext> , IServiceDal
 	{
-        protected EFServiceDal(CoreContext dbContext) : base(dbContext)
-        {
-
-        }
     }
 }

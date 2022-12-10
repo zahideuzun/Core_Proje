@@ -10,11 +10,8 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFMessageDal : GenericRepo<Message> , IMessageDal
+	public class EFMessageDal : GenericRepo<Message, CoreContext> , IMessageDal
 	{
-        protected EFMessageDal(CoreContext dbContext) : base(dbContext)
-        {
-
-        }
+      
     }
 }

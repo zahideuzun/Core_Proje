@@ -10,12 +10,9 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFPortfolioDal : GenericRepo<Portfolio> , IPortfolioDal
+	public class EFPortfolioDal : GenericRepo<Portfolio, CoreContext> , IPortfolioDal
 	{
-        protected EFPortfolioDal(CoreContext dbContext) : base(dbContext)
-        {
-
-        }
+      
 
     }
 }

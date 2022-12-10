@@ -10,52 +10,54 @@ using Microsoft.EntityFrameworkCore;
 namespace DataAccess.Repository.Bases
 {
 
-    public class GenericRepo<T> : IGenericDal<T> where T : class
+    public class GenericRepo<T,TContext> : IGenericDal<T> where T : class where TContext :DbContext,new()
     {
-        private readonly CoreContext _coreContext;
-
-        public GenericRepo(CoreContext coreContext)
-        {
-            _coreContext = coreContext;
-        }
-
-       
+      
         public void Delete(T t)
         {
-
-            _coreContext.Remove(t);
-            _coreContext.SaveChanges();
-
+            using (var coreContext = new TContext())
+            {
+                coreContext.Remove(t);
+                coreContext.SaveChanges();
+            }
         }
 
         public T GetById(int id)
         {
-
-            return _coreContext.Set<T>().Find(id);
-
+            using (var coreContext = new TContext())
+            {
+                return coreContext.Set<T>().Find(id);
+            }
         }
 
         public List<T> GetList()
         {
 
-            return _coreContext.Set<T>().ToList();
+            using (var coreContext = new TContext())
+            {
+                return coreContext.Set<T>().ToList(); ;
+            }
+          
 
         }
 
         public void Insert(T t)
         {
-
-            _coreContext.Add(t);
-            _coreContext.SaveChanges();
+            using (var coreContext = new TContext())
+            {
+                coreContext.Add(t);
+                coreContext.SaveChanges();
+            }
 
         }
 
         public void Update(T t)
         {
-
-            _coreContext.Update(t);
-            _coreContext.SaveChanges();
-
+            using (var coreContext = new TContext())
+            {
+                coreContext.Update(t);
+                coreContext.SaveChanges();
+            }
         }
     }
 }

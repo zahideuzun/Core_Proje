@@ -10,11 +10,8 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFTestimonialDal : GenericRepo<Testimonial> , ITestimonialDal
+	public class EFTestimonialDal : GenericRepo<Testimonial, CoreContext> , ITestimonialDal
 	{
-        protected EFTestimonialDal(CoreContext dbContext) : base(dbContext) 
-        {
-
-        }
+     
     }
 }

@@ -10,11 +10,8 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFSkillDal : GenericRepo<Skill>, ISkillDal
+	public class EFSkillDal : GenericRepo<Skill, CoreContext>, ISkillDal
 	{
-        protected EFSkillDal(CoreContext dbContext) : base(dbContext)
-        {
-
-        }
+     
     }
 }

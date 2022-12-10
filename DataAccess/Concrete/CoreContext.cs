@@ -13,7 +13,8 @@ namespace DataAccess.Concrete
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                 .AddJsonFile("appsettings.json")
                 .Build();
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("CoreDB"));
+            var activeConn =configuration.GetSection("ActiveConn").Value;
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString(activeConn));
         }
         public DbSet<About> Abouts { get; set; }
 		public DbSet<Contact> Contacts { get; set; }	

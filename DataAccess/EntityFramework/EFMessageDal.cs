@@ -10,7 +10,7 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFMessageDal : GenericRepo<Message, CoreContext> , IMessageDal
+	public class EfMessageDal : GenericRepo<Message, CoreContext> , IMessageDal
 	{
       
     }

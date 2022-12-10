@@ -10,7 +10,7 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFSocialMediaDal : GenericRepo<SocialMedia, CoreContext>, ISocialMediaDal
+	public class EfSocialMediaDal : GenericRepo<SocialMedia, CoreContext>, ISocialMediaDal
 	{
      
     }

@@ -16,10 +16,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddTransient<IFeatureDal, EFFeatureDal>();
-builder.Services.AddTransient<IAboutDal, EFAboutDal>();
+builder.Services.AddTransient<IFeatureDal, EfFeatureDal>();
+builder.Services.AddTransient<IAboutDal, EfAboutDal>();
+builder.Services.AddTransient<IServiceDal, EfServiceDal>();
+builder.Services.AddTransient<ISkillDal, EfSkillDal>();
+
+
 builder.Services.AddTransient<IFeatureService, FeatureManager>();
 builder.Services.AddTransient<IAboutService, AboutManager>();
+builder.Services.AddTransient<IServiceService, ServiceManager>();
+builder.Services.AddTransient<ISkillService, SkillManager>();
 
 var app = builder.Build();
 

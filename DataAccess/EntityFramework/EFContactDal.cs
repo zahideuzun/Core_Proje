@@ -10,7 +10,7 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFContactDal : GenericRepo<Contact,CoreContext> , IContactDal
+	public class EfContactDal : GenericRepo<Contact,CoreContext> , IContactDal
 	{
         
 

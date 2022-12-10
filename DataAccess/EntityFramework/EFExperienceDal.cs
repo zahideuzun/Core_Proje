@@ -10,7 +10,7 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFExperienceDal : GenericRepo<Experience,CoreContext> , IExperienceDal
+	public class EfExperienceDal : GenericRepo<Experience,CoreContext> , IExperienceDal
 	{
       
     }

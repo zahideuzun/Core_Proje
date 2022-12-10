@@ -35,10 +35,8 @@ namespace DataAccess.Repository.Bases
 
             using (var coreContext = new TContext())
             {
-                return coreContext.Set<T>().ToList(); ;
+                return coreContext.Set<T>().ToList();
             }
-          
-
         }
 
         public void Insert(T t)

@@ -10,7 +10,7 @@ using Entities.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-	public class EFTestimonialDal : GenericRepo<Testimonial, CoreContext> , ITestimonialDal
+	public class EfTestimonialDal : GenericRepo<Testimonial, CoreContext> , ITestimonialDal
 	{
      
     }

@@ -17,6 +17,4 @@ namespace Core_Proje.ViewComponents.TestimonialsList
 			return View(values);
 		}
 	}
-	{
-	}
 }

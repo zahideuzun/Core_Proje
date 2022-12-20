@@ -25,6 +25,7 @@ builder.Services.AddTransient<IExperienceDal, EfExperienceDal>();
 builder.Services.AddTransient<IContactDal, EfContactDal>();
 builder.Services.AddTransient<ITestimonialDal, EfTestimonialDal>();
 builder.Services.AddTransient<IMessageDal, EfMessageDal>();
+builder.Services.AddTransient<IToDoListDal, EfToDoListDal>();
 
 builder.Services.AddTransient<IFeatureService, FeatureManager>();
 builder.Services.AddTransient<IAboutService, AboutManager>();
@@ -35,6 +36,7 @@ builder.Services.AddTransient<IExperienceService, ExperienceManager>();
 builder.Services.AddTransient<ITestimonialService, TestimonialsManager>();
 builder.Services.AddTransient<IContactService, ContactManager>();
 builder.Services.AddTransient<IMessageService, MessageManager>();
+builder.Services.AddTransient<IToDoListService, ToDoListManager>();
 
 
 var app = builder.Build();

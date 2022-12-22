@@ -5,6 +5,7 @@ using DataAccess.Abstract.Bases;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using DataAccess.Repository.Bases;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
+builder.Services.AddDbContext<CoreContext>();
+builder.Services.AddIdentity<WriterUser, WriterRole>().AddEntityFrameworkStores<CoreContext>();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddTransient<IFeatureDal, EfFeatureDal>();
@@ -59,5 +62,12 @@ app.UseAuthorization();
 app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints =>
+{
+	endpoints.MapControllerRoute(
+		name: "areas",
+		pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+	);
+});
 
 app.Run();

@@ -1,10 +1,11 @@
 ﻿using Entities.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace DataAccess.Concrete
 {
-	public class CoreContext : DbContext
+	public class CoreContext : IdentityDbContext<WriterUser, WriterRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,5 +32,5 @@ namespace DataAccess.Concrete
 		public DbSet<ToDoList> ToDoLists { get; set; }
 
 
-	}
+    }
 }

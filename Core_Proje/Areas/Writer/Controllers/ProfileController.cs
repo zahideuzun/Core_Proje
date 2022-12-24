@@ -38,6 +38,7 @@ namespace Core_Proje.Areas.Writer.Controllers
                 await p.Picture.CopyToAsync(stream);
                 user.ImageUrl = imagename;
 	        }
+            
             user.Name = p.Name;
             user.Surname =p.Surname;
             var result = await _userManager.UpdateAsync(user);

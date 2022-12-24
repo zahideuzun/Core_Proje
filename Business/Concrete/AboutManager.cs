@@ -23,6 +23,11 @@ namespace Business.Concrete
 			return _aboutDal.GetById(id);
 		}
 
+		public List<About> TGetListByFilter()
+		{
+			throw new NotImplementedException();
+		}
+
 		public void TAdd(About t)
 		{
 			_aboutDal.Insert(t);

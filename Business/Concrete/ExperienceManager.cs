@@ -42,5 +42,10 @@ namespace Business.Concrete
 		{
 			return _experienceDal.GetById(id);
 		}
+
+		public List<Experience> TGetListByFilter()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

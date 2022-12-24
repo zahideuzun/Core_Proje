@@ -40,5 +40,10 @@ namespace Business.Concrete
 		{
 			return _testimonialDal.GetById(id);
 		}
+
+		public List<Testimonial> TGetListByFilter()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

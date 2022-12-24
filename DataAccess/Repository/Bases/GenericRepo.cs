@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract.Bases;
@@ -28,6 +29,16 @@ namespace DataAccess.Repository.Bases
             {
                 return coreContext.Set<T>().Find(id);
             }
+        }
+
+        public List<T> GetByFilter(Expression<Func<T, bool>> filter)
+        {
+	        using (var coreContext = new TContext())
+	        {
+		        return coreContext.Set<T>().Where(filter).ToList();
+
+	        }
+           
         }
 
         public List<T> GetList()

@@ -41,5 +41,10 @@ namespace Business.Concrete
 		{
 			return _serviceDal.GetById(id);
 		}
+
+		public List<Service> TGetListByFilter()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

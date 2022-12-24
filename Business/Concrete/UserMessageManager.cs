@@ -42,6 +42,11 @@ namespace Business.Concrete
 			throw new NotImplementedException();
 		}
 
+		public List<UserMessage> TGetListByFilter()
+		{
+			throw new NotImplementedException();
+		}
+
 		public List<UserMessage> GetUserMessagesWithUserServices()
 		{
 			return _userMessageDal.GetUserMessagesWithUser();

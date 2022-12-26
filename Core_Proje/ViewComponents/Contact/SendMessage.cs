@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Concrete;
+using DataAccess.EntityFramework;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,12 +8,7 @@ namespace Core_Proje.ViewComponents.Contact
 {
 	public class SendMessage : ViewComponent
 	{
-		IMessageService _messageService;
-
-		public SendMessage(IMessageService messageService)
-		{
-			_messageService = messageService;
-		}
+		MessageManager messageManager = new MessageManager(new EfMessageDal());
 		[HttpGet]
 		public IViewComponentResult Invoke()
 		{
@@ -21,9 +18,9 @@ namespace Core_Proje.ViewComponents.Contact
 		//[HttpPost]
 		//public IViewComponentResult Invoke(Message p)
 		//{
-		//	p.Date= Convert.ToDateTime(DateTime.Now.ToShortDateString());
+		//	p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
 		//	p.Status = true;
-		//	_messageService.TAdd(p);
+		//	messageManager.TAdd(p);
 		//	return View();
 		//}
 

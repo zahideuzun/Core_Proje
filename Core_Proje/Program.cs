@@ -6,6 +6,7 @@ using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using DataAccess.Repository.Bases;
 using Entities.Concrete;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -59,9 +60,12 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-	name: "default",
-	pattern: "{controller=Home}/{action=Index}/{id?}");
+//app.MapAreaControllerRoute(
+//	name: "Writer",
+//	areaName: "Writer",
+//	pattern: "Writer/{controller=Home}/{action=Index}/{id?}");
+
+
 app.UseEndpoints(endpoints =>
 {
 	endpoints.MapControllerRoute(
@@ -69,5 +73,10 @@ app.UseEndpoints(endpoints =>
 		pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
 	);
 });
+
+app.MapControllerRoute(
+	name: "default",
+	pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 app.Run();

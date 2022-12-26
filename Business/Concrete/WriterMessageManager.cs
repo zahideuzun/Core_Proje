@@ -19,7 +19,7 @@ namespace Business.Concrete
 		}
 		public void TAdd(WriterMessage t)
 		{
-			throw new NotImplementedException();
+			_writerMessageDal.Insert(t);
 		}
 
 		public void TDelete(WriterMessage t)
@@ -39,13 +39,23 @@ namespace Business.Concrete
 
 		public WriterMessage GetById(int id)
 		{
+			return _writerMessageDal.GetById(id);
+		}
+
+		public List<WriterMessage> TGetListByFilter()
+		{
 			throw new NotImplementedException();
 		}
 
-		public List<WriterMessage> TGetListByFilter(string p)
+
+		public List<WriterMessage> GetListSenderMessage(string p)
+		{
+			return _writerMessageDal.GetByFilter(x => x.Sender == p);
+		}
+
+		public List<WriterMessage> GetListReceiverMessage(string p)
 		{
 			return _writerMessageDal.GetByFilter(x => x.Receiver == p);
 		}
-
 	}
 }

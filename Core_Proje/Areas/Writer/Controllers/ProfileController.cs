@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
-    public class ProfileController : Controller
+    [Route("Write/[controller]/[action]")]
+	public class ProfileController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
 
@@ -41,6 +42,7 @@ namespace Core_Proje.Areas.Writer.Controllers
             
             user.Name = p.Name;
             user.Surname =p.Surname;
+            user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, p.Password); //identity küt. sifre degistirmek icin kullanabildigim bir method.
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {

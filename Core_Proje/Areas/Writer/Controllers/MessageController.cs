@@ -71,7 +71,7 @@ namespace Core_Proje.Areas.Writer.Controllers
 			p.Sender = mail;
 			p.SenderName = name;
 			CoreContext coreContext = new CoreContext();
-			var usernamesurname = coreContext.Users.Where(x => x.Email == p.Receiver).Select(y => y.Name + y.Surname)
+			var usernamesurname = coreContext.Users.Where(x => x.Email == p.Receiver).Select(y => y.Name + " "+  y.Surname)
 				.FirstOrDefault(); // kullanıcının maili yerine tam isim ve soyismi yazsın istiyorum.
 			p.ReceiverName = usernamesurname;
             writerMessageManager.TAdd(p);

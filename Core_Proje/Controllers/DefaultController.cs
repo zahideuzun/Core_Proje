@@ -3,14 +3,15 @@ using Business.Concrete;
 using Core_Proje.ViewComponents.Contact;
 using DataAccess.EntityFramework;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Controllers
 {
-	
+	[AllowAnonymous]
 	public class DefaultController : Controller
 	{
-		public IActionResult Index()
+		public IActionResult Index()  
 		{
 			return View();
 		}

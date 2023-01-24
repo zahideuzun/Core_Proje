@@ -41,5 +41,10 @@ namespace Business.Concrete
 		{
 			return _contactDal.GetById(id);
 		}
+
+		public List<Contact> TGetListByFilter()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

@@ -11,20 +11,14 @@ namespace Core_Proje.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.v1 = "Yetenek Listesi";
-            ViewBag.v2 = "Yetenekler";
-            ViewBag.v3 = "Yetenek Listesi";
-            var values = skillManager.GetList();
+	        var values = skillManager.GetList();
             return View(values);
         }
 
         [HttpGet]
         public IActionResult AddSkill()
         {
-            ViewBag.v1 = "Yetenek Ekleme";
-            ViewBag.v2 = "Yetenekler";
-            ViewBag.v3 = "Yetenek Ekleme";
-            return View();
+	        return View();
         }
 
         [HttpPost]
@@ -44,10 +38,7 @@ namespace Core_Proje.Controllers
         [HttpGet]
         public IActionResult EditSkill(int id)
         {
-            ViewBag.v1 = "Yetenek Güncelleme";
-            ViewBag.v2 = "Yetenekler";
-            ViewBag.v3 = "Yetenek Güncelleme";
-            var values = skillManager.GetById(id);
+	        var values = skillManager.GetById(id);
             return View(values);
         }
         [HttpPost]

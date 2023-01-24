@@ -41,5 +41,10 @@ namespace Business.Concrete
 		{
 			return _skillDal.GetById(id);
 		}
+
+		public List<Skill> TGetListByFilter()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

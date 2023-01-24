@@ -11,7 +11,7 @@ namespace Business.Concrete
 {
 	public class MessageManager : IMessageService
 	{
-		private IMessageDal _messageDal;
+		IMessageDal _messageDal;
 		public MessageManager(IMessageDal messageDal)
 		{
 			_messageDal = messageDal;
@@ -23,12 +23,12 @@ namespace Business.Concrete
 
 		public void TDelete(Message t)
 		{
-			throw new NotImplementedException();
+			_messageDal.Delete(t);
 		}
 
 		public void TUpdate(Message t)
 		{
-			throw new NotImplementedException();
+			_messageDal.Update(t);
 		}
 
 		public List<Message> GetList()
@@ -37,6 +37,11 @@ namespace Business.Concrete
         }
 
 		public Message GetById(int id)
+		{
+			return _messageDal.GetById(id);
+		}
+
+		public List<Message> TGetListByFilter()
 		{
 			throw new NotImplementedException();
 		}

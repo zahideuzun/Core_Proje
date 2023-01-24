@@ -8,9 +8,8 @@ using Entities.Concrete;
 
 namespace DataAccess.Abstract
 {
-	public interface IUserMessageDal : IGenericDal<UserMessage>
-	{
-		public List<UserMessage> GetUserMessagesWithUser();
-		
-	}
+    public interface IWriterUserDal : IGenericDal<WriterUser>
+    {
+
+    }
 }

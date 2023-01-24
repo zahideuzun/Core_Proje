@@ -44,5 +44,10 @@ namespace Business.Concrete
         {
             return _featureDal.GetById(id);
         }
+
+        public List<Feature> TGetListByFilter()
+        {
+	        throw new NotImplementedException();
+        }
     }
 }

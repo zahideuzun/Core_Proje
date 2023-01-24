@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccess.Abstract.Bases;
+using Business.Abstract.Bases;
 using Entities.Concrete;
 
-namespace DataAccess.Abstract
+namespace Business.Abstract
 {
-	public interface IUserDal : IGenericDal<User>
-	{
+    public interface IWriterUserService : IGenericService<WriterUser>
+    {
 
-	}
+    }
 }

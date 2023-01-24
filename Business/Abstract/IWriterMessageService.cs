@@ -8,8 +8,10 @@ using Entities.Concrete;
 
 namespace Business.Abstract
 {
-	public interface IUserMessageService : IGenericService<UserMessage>
+	public interface IWriterMessageService : IGenericService<WriterMessage>
 	{
-		List<UserMessage> GetUserMessagesWithUserServices();
+		List<WriterMessage> GetListSenderMessage(string p);
+		List<WriterMessage> GetListReceiverMessage(string p);
+
 	}
 }

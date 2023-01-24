@@ -41,5 +41,10 @@ namespace Business.Concrete
         {
 	        return _announcementDal.GetById(id);
         }
+
+        public List<Announcement> TGetListByFilter()
+        {
+	        throw new NotImplementedException();
+        }
     }
 }

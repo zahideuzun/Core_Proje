@@ -13,9 +13,7 @@ namespace Core_Proje.Controllers
 
 		public IActionResult Index()
 		{
-			ViewBag.v1 = "Proje Listesi";
-			ViewBag.v2 = "Projeler";
-			ViewBag.v3 = "Proje Listesi";
+			
 			var values = portfolioManager.GetList();
 			return View(values);
 		}
@@ -23,9 +21,6 @@ namespace Core_Proje.Controllers
 		[HttpGet]
 		public IActionResult AddPortfolio()
 		{
-			ViewBag.v1 = "Proje Listesi";
-			ViewBag.v2 = "Projeler";
-			ViewBag.v3 = "Proje Ekleme";
 			return View();
 		}
 

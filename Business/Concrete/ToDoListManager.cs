@@ -41,5 +41,10 @@ namespace Business.Concrete
 		{
 			throw new NotImplementedException();
 		}
+
+		public List<ToDoList> TGetListByFilter()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

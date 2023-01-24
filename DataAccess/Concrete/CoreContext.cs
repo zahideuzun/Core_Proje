@@ -14,9 +14,9 @@ namespace DataAccess.Concrete
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                 .AddJsonFile("appsettings.json")
                 .Build();
-            var activeConn =configuration.GetSection("ActiveConn").Value;
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString(activeConn));
-        }
+			var activeConn = configuration.GetSection("ActiveConn").Value;
+			optionsBuilder.UseSqlServer(configuration.GetConnectionString(activeConn));
+		}
         public DbSet<About> Abouts { get; set; }
 		public DbSet<Contact> Contacts { get; set; }	
 		public DbSet<Experience> Experiences { get; set; }
@@ -27,10 +27,9 @@ namespace DataAccess.Concrete
 		public DbSet<Skill> Skills { get; set; }
 		public DbSet<SocialMedia> SocialMedias { get; set; }
 		public DbSet<Testimonial> Testimonials { get; set; }
-		public DbSet<User> Users { get; set; }
-		public DbSet<UserMessage> UserMessages { get; set; }
 		public DbSet<ToDoList> ToDoLists { get; set; }
 		public DbSet<Announcement> Announcements { get; set; }
+		public DbSet<WriterMessage> WriterMessages { get; set; }
 
 
     }

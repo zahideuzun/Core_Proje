@@ -13,6 +13,7 @@ namespace Business.Abstract.Bases
         void TUpdate(T t);
         List<T> GetList();
         T GetById(int id);
+        List<T> TGetListByFilter();
 
     }
 }

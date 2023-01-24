@@ -40,5 +40,10 @@ namespace Business.Concrete
 		{
 			return _portfolioDal.GetById(id);
 		}
+
+		public List<Portfolio> TGetListByFilter()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

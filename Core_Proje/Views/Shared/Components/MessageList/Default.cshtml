@@ -21,8 +21,15 @@
 									<p class="text-muted text-small">@(((DateTime)@item.Date).ToString("dd-MM-yyyy"))</p>
 								</div>
 								<p class="text-muted">
-
+									@if (item.Content.Length > 30)
+									{
 										@item.Content.Substring(0, 30)
+									}
+									else
+									{
+										@item.Content
+									}
+										
 								</p>
 
 							</div>

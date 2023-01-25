@@ -32,9 +32,9 @@ namespace Business.Concrete
 		}
 
 		public List<Message> GetList()
-		{
-			return _messageDal.GetList();
-		}
+        {
+            return _messageDal.GetList() ?? new List<Message>();
+        }
 
 		public Message GetById(int id)
 		{
